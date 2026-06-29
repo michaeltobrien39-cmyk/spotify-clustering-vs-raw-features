@@ -4,7 +4,8 @@ Spotify Track Popularity — Does Clustering Audio Features Beat the Raw Feature
 
 A feature-engineering experiment on ~90,000 Spotify tracks: does compressing audio features into a small set of cluster labels improve popularity prediction, or do the raw continuous features carry more signal? Tested with both a linear model (multiple regression, SPSS) and non-linear models (decision tree and random forest, R).
 
-The honest headline. Clustering lost. Raw audio features beat the four-cluster labels in every model — Random Forest 70.0% vs 55.8%, decision tree 61.5% vs 53.9%, and in regression R² 0.027 vs 0.006 — with the cluster classifier barely clearing the 51% baseline. Compressing eight continuous features into four groups discards the granularity the models rely on. The wider lesson: clustering as feature engineering only helps when cluster membership encodes discrete latent structure the raw numbers blur, which Spotify audio does not.
+Headline
+Clustering lost. Raw audio features beat the four-cluster labels in every model — Random Forest 70.0% vs 55.8%, decision tree 61.5% vs 53.9%, and in regression R² 0.027 vs 0.006 — with the cluster classifier barely clearing the 51% baseline. Compressing eight continuous features into four groups discards the granularity the models rely on. The wider lesson: clustering as feature engineering only helps when cluster membership encodes discrete latent structure the raw numbers blur, which Spotify audio does not.
 
 Problem
 Streaming platforms use audio features to shape playlist placement and recommendation, and labels use similar metrics for A&R decisions. That raises a practical question: can a track's commercial popularity be forecast from its acoustic attributes alone, and how should those features be represented for a model — as raw values, or as interpretable audio "types"? This project tests both, and compares linear against non-linear models.
